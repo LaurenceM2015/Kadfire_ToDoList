@@ -1,0 +1,234 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color-white;
+}
+
+body main{
+  background-color: $color-black;
+  //width: 1080px;
+  width: 100%;
+  //height: 1920px
+}
+
+
+.header-clock { 
+	font-family: Aileron; 
+	float: right;
+    font-size: 75px;
+    margin-right: 20px;
+    padding-top: 18px;
+    color: $color-white;
+    text-align: center;
+    display: inline-block;
+    display: -webkit-inline-box;
+    
+}
+
+
+
+
+.cis-top-wrapper {
+	height: 190px;
+	//width: 1080px;
+    padding: 50px 40px 0 40px;
+    //border-bottom: 5px solid $primary-color;
+
+    .title {
+        font-size: 80px;
+        font-weight: 600;
+        color: $color-white;
+    }
+
+    .title-lable{
+        float: left;
+        width: 75%;
+        border-bottom: 5px solid $primary-color;
+    }
+
+    .page-lable{
+        float: right;
+        width: 25%;
+        text-align: right;
+    }
+}
+
+
+.cis-info-wrapper {
+	position: relative;
+    //width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+	height: 1500px;
+	padding: 40px;
+    color: $color-white;
+    
+    .dest-calling-point-wrapper {
+        border: 4px solid transparent;
+        //height: 1000px;
+        //height: 1480px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 5%;
+        height: 25%;
+        
+       &:nth-child(odd){
+        background-color: $color-black-light;
+        
+        border-radius: 20px;
+       }
+    }
+
+    .calling-point-names {
+        //position: relative;
+        /*height: 370px;
+        max-height: 400px; */
+        width: 80%;
+        float: right;
+        font-size: 36px;
+
+        .calling-point-at-lable{font-size: 24px;}
+
+        .calling-point-name{font-size: 30px;}
+        
+    
+    }
+    
+
+    .platform-heading {
+        /*position: relative; 
+        top: 190px;
+        left: 0;
+        height: 50px;
+        width: 1080px;*/
+        color: $color-white;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 36px;
+        font-weight: 600;
+        float: left;
+
+        .service-status,
+        .platform-number {display: block;}
+
+        .service-heading{height: 150px;}
+
+        .service-status{
+            color: $color-orange;
+           font-size: 30px;
+        }
+
+        .platform-number {
+            //float: right;
+            font-weight: 400;
+        }
+
+        .destination-name-label {
+            /*
+            width: 100px;
+            float: left;
+            height: 50%;
+            font-weight: 600;
+            */
+            /* font-size: 80px;*/
+            margin-bottom: 10px;
+            font-weight: 600;
+  
+        }
+    }
+
+    .platform-label {
+        font-weight: 600;
+        clear: both;
+        /* 
+        font-size: 80px;
+        
+        float: right;
+        height: 50%;
+        width: 100px;
+        */
+    }
+
+    .expected-label {
+        /* 
+        font-size: 80px;
+        height: 50%;
+        */
+        font-weight: 500;
+        color: $color-orange;
+        line-height: 1.5;
+        width: 24%;
+        float: left; 
+        
+    }
+
+
+    .calling-point{
+        width: 76%;
+        //float: right;
+        font-weight: 600;
+       // padding: 10px 0;
+        line-height: 1.1;
+        font-size: 95%;
+    }
+
+
+
+}
+
+
+
+
+.cis-bottom-wrapper {
+    //position: fixed;
+    background-color: $color-black;
+	bottom: 0;
+	left: 0;
+	height: 130px;
+    //width: 1080px;
+    width: 100%;
+	padding: 10px 40px 10px 40px;
+	border-top: 5px solid $primary-color;
+	/*background-image: url(/s3/GR/CIS/footer-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+    background-size: 30%; */
+}
+
+.cis-bottom-wrapper .footer-clock {
+	/* 
+	font-family: Aileron; 
+	float: right;
+	*/
+    font-size: 75px;
+    margin-right: 20px;
+    padding-top: 18px;
+    color: $color-grey;
+    text-align: center;
+
+}
+
+.cis-bottom-wrapper .footer-clock .hours,
+.cis-bottom-wrapper .footer-clock .minutes,
+.cis-bottom-wrapper .footer-clock .seconds {
+	display: inline-block;
+	width: 88px;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.cis-bottom-wrapper .footer-clock .seperator,
+.cis-bottom-wrapper .footer-clock .seperator-sec {
+	display: inline-block;
+	width: 15px;
+}
+.cis-bottom-wrapper .footer-clock .seconds,
+.cis-bottom-wrapper .footer-clock .seperator-sec {
+	color: $color-grey;
+}
+
+
+
+
