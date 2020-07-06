@@ -14,28 +14,56 @@ let rotationTimer = 5000;
 
 function display() {
     let currentTime = new Date();
+    console.log(currentTime);
+    console.log(currentTime.getHours());
+
+    console.log(currentTime.getMinutes());
 	// need to add leading zeros :P
-	document.querySelector('.hours').innerHTML = addLeadingZero(currentTime.getHours());
-	document.querySelector('.minutes').innerHTML = addLeadingZero(currentTime.getMinutes());
-	document.querySelector('.seconds').innerHTML = addLeadingZero(currentTime.getSeconds());
+	document.querySelector('.hours').innerHTML = currentTime.getHours();
+	document.querySelector('.minutes').innerHTML = currentTime.getMinutes();
+	document.querySelector('.seconds').innerHTML = currentTime.getSeconds();
 
 }
 
-const xhr = new XMLHttpRequest();
+display();
 
-const url = 'https://api-to-call.com/endpoint';
+setInterval(display,500);
 
-// Saving response to jSon format 
-xhr.responseType  = 'json';
 
-// event handler 
-xhr.onreadystatechange = () => {
-  // Check if the request is finish.
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    return xhr.response; 
-  }
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
 };
+xhttp.open("GET", "http://iris2.rail.co.uk/tiger/3001E1.xml", true);
+xhttp.send();
 
-// Opens request and send object
-xhr.open('GET', url);
-xhr.send();
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.getElementsByTagName('ServiceType')[0];
+    var y = x.childNodes[0];
+    /*var calpoint='   <div class="dest-calling-point-wrapper">";  
+    calpoint +='<div class="platform-heading">';
+     calpoint  +='<div class="service-heading">'+
+            '<div class="time-label">'
+                +'<span>'++'</span>:' 
+                +'<span>'++'</span>'
+            +'</div>'
+            +'<div class="service-status">'++'</div>'
+         +'</div>'
+        +'<div class="platform-number">'+Platform+'</div>'
+    '</div>'
+
+   +'<div class="calling-point-names">' 
+      +'<div class="destination-name-label">Edinburgh</div>'
+       +'<div class="calling-point-at-lable">This has called at:</div>' 
+        +'<div class="calling-point-name">'
+            
+        +'</div>'
+    +'</div>'
++'</div>' ;*/
+    document.getElementById("ServiceType").innerHTML =
+    y.nodeValue; 
+
+}
